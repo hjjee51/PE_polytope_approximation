@@ -21,7 +21,7 @@ Note that the codes for 'MaxGP' algorithm in the Mermin setting only adds one qu
 
 When finding optimal PEFs with fixed powers in (b) in the CHSH setting, one can choose two different optimisation methods: 1) using 'SLSQP' method in SciPy library and 2) using 'cvxpy' library with 'MOSEK' (free only for academic use) solver. 1) is much slower than 2) and sometimes obtains invalid optimal PEFs due to numerical imprecision (which need some adjustment - see the discussion after Eq.(162) in [1]), but can deal with very small PEF power (near zero). Our codes normally use 2) for its numerical precision and the speed, but one can freely choose the option 1).
 
-The NPA relaxations were implemented in the file 'NPA_lib.py' written by Hyejung H. Jee.
+The NPA relaxations are implemented in the file 'NPA_lib.py' written by Hyejung H. Jee.
 
 [1] E. Knill et al., Phys. Rev. R., 2(3):033465, (2020), Y. Zhang et al., Phys. Rev. A, 98(4):040304, (2018).   
 [2] Our paper - to be published.
