@@ -8,12 +8,12 @@ The codes require implementation of convex optimisation with semidefinite constr
 
 The project includes codes for two specific DI setups: 1) CHSH setting - two parties with two dichotomic measurements on each party, and 2) Mermin setting - three parties with two dichotomic measurements on each party.
 
-The primary object of our codes is a class called 'PE_analysis' in the file 'tri-or-bi_PE_polytope.py'. An instance of this class can be created with arguments (typical correlation, input distribution, the choice of NPA hierarchy level, input distribution polytope). 'Typical correlation' represent the typical behaviour of the devices which can be obtained in the characterisation stage before actual runs of the protocol - for which the entropy witness will be obtained/optimised. 'Input distribution' describes the probability distribution of the input entropy source. 'The choice of NPA hierarchy level' is the NPA level that one wants to use in the anlysis. 'Input distribution polytope' describes the set (should be a polytope) of allowed input distributions if the input distribution is not fixed ('None' if the input distribution is fixed and independent).
+The primary object of our codes is a class called 'PE_analysis' in the file 'tri-or-bi_PE_polytope.py'. An instance of this class can be created with arguments (typical correlation, input distribution, the choice of NPA hierarchy level, input distribution polytope). 'Typical correlation' represents the typical behaviour of the devices which can be obtained in the characterisation stage before actual runs of the protocol - for which the entropy witness will be obtained/optimised. 'Input distribution' describes the probability distribution of the input entropy source. 'The choice of NPA hierarchy level' is the NPA level that one wants to use in the anlysis. 'Input distribution polytope' describes the set (should be a polytope) of allowed input distributions if the input distribution is not fixed ('None' if the input distribution is fixed and independent).
 
-The class 'PE_analysis' can perform:   
-(a) Constructing outer polytope approximations to the quantum set. One can use 'NearV' and 'MaxGP' algorithms developed in [2] to construct taylored approximations for the typical correlation. If there is any already known polytope approximation, one can add it to the class.   
-(b) Finding optimal probability estimation factors (PEFs) for the typical correlation with fixed PEF powers using polytope-approximations generated in (a). This process corresponds to the simpler optimisation in Eq.(18) in [2].   
-(c) For some given data, calculating the extractable entropy using the optimised PEFs in (b).
+The class 'PE_analysis' can:   
+(a) Construct outer polytope approximations to the quantum set. One can use 'NearV' and 'MaxGP' algorithms developed in [2] to construct taylored approximations for the typical correlation. If there is any already known polytope approximation, one can add it to the class.   
+(b) Find optimal probability estimation factors (PEFs) for the typical correlation with fixed PEF powers using polytope-approximations generated in (a). This process corresponds to the simpler optimisation in Eq.(18) in [2].   
+(c) For some given data, calculate the extractable entropy using the optimised PEFs in (b).
 
 Please see 'CHSH_example.ipynb', 'Asymmetric_CHSH.ipynb', and 'randomness_amplification.ipynb' for more specific example codes showing how to use the class 'PE_analysis'.
 
