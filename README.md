@@ -2,7 +2,9 @@
 
 This project presents example codes for finite-data analysis for device-independent (DI) randomness verification using probability estimation technique [1] and using the algorithms for constructing polytope-approximations to the quantum set developed in [2]. Please see [2] for more details of how the analysis works.
 
-This project is created by Quantinuum's Quantum Cryptography team. The codes are available for non-commercial use only; see the license for details.
+This project is created by Quantinuum's Quantum Cryptography team. The codes are available for non-commercial use only; see the license for details. 
+
+The codes require implementation of convex optimisation with semidefinite constraints; we use 'cvxpy' library with default solver 'MOSEK' (only free for academic purposes).
 
 The project includes codes for two specific DI setups: 1) CHSH setting - two parties with two dichotomic measurements on each party, and 2) Mermin setting - three parties with two dichotomic measurements on each party.
 
@@ -19,7 +21,7 @@ The Mermin case typically requires a large memory for PEF optimisation in (b) du
 
 Note that the codes for 'MaxGP' algorithm in the Mermin setting only adds one quantum Bell inequality per each iteration, in comparison to the CHSH setting where we add all inequalities generated from optimal strategies outside of the quantum set. This is because adding one inequality (already) massively increases the complexity of the resulting polytope. The 'MaxGP' algorithm in the Mermin setting looks at all optimal strategies (only the ones outside of the quantum set), and picks the best performing one in PEF optimisation.
 
-When finding optimal PEFs with fixed powers in (b) in the CHSH setting, one can choose two different optimisation methods: 1) using 'SLSQP' method in SciPy library and 2) using 'cvxpy' library with 'MOSEK' (free only for academic use) solver. 1) is much slower than 2) and sometimes obtains invalid optimal PEFs due to numerical imprecision (which need some adjustment - see the discussion after Eq.(162) in [1]), but can deal with very small PEF power (near zero). Our codes normally use 2) for its numerical precision and the speed, but one can freely choose the option 1).
+When finding optimal PEFs with fixed powers in (b) in the CHSH setting, one can choose two different optimisation methods: 1) using 'SLSQP' method in SciPy library and 2) using 'cvxpy' library with 'MOSEK' solver. 1) is much slower than 2) and sometimes obtains invalid optimal PEFs due to numerical imprecision (which need some adjustment - see the discussion after Eq.(162) in [1]), but can deal with very small PEF power (near zero). Our codes normally use 2) for its numerical precision and the speed, but one can freely choose the option 1).
 
 The NPA relaxations are implemented in the file 'NPA_lib.py' written by Hyejung H. Jee.
 
