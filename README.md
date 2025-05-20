@@ -2,7 +2,7 @@
 
 This project presents example codes for finite-data analysis for device-independent (DI) randomness verification using probability estimation technique [1] and using the algorithms for constructing polytope-approximations to the quantum set developed in [2]. Please see [2] for more details of how the analysis works.
 
-The codes are available for non-commercial use only; see the license for details.
+This project is created by Quantinuum's Quantum Cryptography team. The codes are available for non-commercial use only; see the license for details.
 
 The project includes codes for two specific DI setups: 1) CHSH setting - two parties with two dichotomic measurements on each party, and 2) Mermin setting - three parties with two dichotomic measurements on each party.
 
