@@ -4,7 +4,7 @@ This project presents example codes for finite-data analysis for device-independ
 
 This project is created by Quantinuum's Quantum Cryptography team. The codes are available for non-commercial use only; see the license for details. 
 
-The codes require implementation of convex optimisation with semidefinite constraints; we use 'cvxpy' library with default solver 'MOSEK' (only free for academic purposes).
+The codes require implementation of convex optimisation with semidefinite constraints, for which we use 'cvxpy' library with default solver 'MOSEK' (only free for academic purposes), and vertex & facet enumeration algorithms, for which we use 'pycddlib' library.
 
 The project includes codes for two specific DI setups: 1) CHSH setting - two parties with two dichotomic measurements on each party, and 2) Mermin setting - three parties with two dichotomic measurements on each party.
 
